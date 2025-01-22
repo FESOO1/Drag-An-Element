@@ -1,0 +1,74 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(20,20,20);
+}
+
+.cordinate-shower {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 999;
+    color: white;
+    pointer-events: none;
+}
+
+/* CONTAINER BOX */
+
+.box-container {
+    min-height: 100vh;
+}
+
+/* BOX */
+
+.box {
+    position: fixed;
+    top: 150px;
+    left: 150px;
+    width: 500px;
+    height: 350px;
+    background-color: rgb(30,30,30);
+    display: grid;
+    grid-template-rows: auto 1fr;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 0.5rem;
+    transition: top 300ms, left 300ms, height 300ms;
+}
+
+/* BOX CONTROLS */
+
+.box-controls {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    height: 30px;
+    background-color: rgb(40,40,40);
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.box-controls-expand {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 0;
+    padding-inline: 5px;
+    background-color: transparent;
+}
+
+.box-controls-expand-svg {
+    color: white;
+    width: 20px;
+    height: 20px;
+}
+
+.box-controls-expand:hover {
+    background-color: rgba(255,255,255,0.09);
+}
+
+.box-controls-expand:active {
+    background-color: rgba(255,255,255,0.06);
+}
