@@ -30,8 +30,8 @@ function moveTheBox(e) {
     newPosY = e.clientY - posY;
     newPosX = e.clientX - posX;
 
-    box.style.top = newPosY + 'px';
-    box.style.left = newPosX + 'px';
+    box.style.top = (newPosY + e.clientY) + 'px';
+    box.style.left = (newPosX + e.clientX) + 'px';
 };
 
 // BOX EXPAND
