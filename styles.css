@@ -37,7 +37,7 @@ body {
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.05);
     border-radius: 0.5rem;
-    transition: top 300ms, left 300ms, height 300ms;
+    transition: 300ms;
 }
 
 /* BOX CONTROLS */

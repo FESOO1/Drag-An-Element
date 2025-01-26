@@ -7,8 +7,7 @@ const boxOffsetTop = document.getElementById('boxOffsetTop');
 const boxOffsetLeft = document.getElementById('boxOffsetLeft');
 let isBoxMoved = false;
 let isExpanded = false;
-let boxPosY = 0;
-let boxPosX = 0;
+let boxPosY = 0, boxPosX = 0, boxNewPosY = 0, boxNewPosX = 0;
 
 boxExpandButton.addEventListener('click', () => {
     updateBoxStyle();
@@ -42,6 +41,8 @@ function updateBoxStyle() {
 
         isExpanded = true;
     } else {
+        console.log();
+
         box.style.width = '500px';
         box.style.height = '350px';
         box.style.top = isBoxMoved === true ? boxPosY + 'px' : '150px';
@@ -56,19 +57,21 @@ function updateBoxStyle() {
 // MOVE THE BOX
 
 function moveTheBox(e) {
+    boxNewPosY = boxPosY - e.clientY;
+    boxNewPosX = boxPosX - e.clientX;
+
     boxPosY = e.clientY;
     boxPosX = e.clientX;
 
-    box.style.top = e.clientY + 'px';
-    box.style.left = e.clientX + 'px';
+    box.style.top = (box.offsetTop - boxNewPosY) + 'px';
+    box.style.left = (box.offsetLeft - boxNewPosX) + 'px';
 
     //
     boxOffsetTop.textContent = box.offsetTop;
     boxOffsetLeft.textContent = box.offsetLeft;
 
-    isBoxMoved = false;
+    isBoxMoved = true;
 };
-
 
 window.addEventListener('mousemove', e => {
     mouseY.textContent = e.clientY;
